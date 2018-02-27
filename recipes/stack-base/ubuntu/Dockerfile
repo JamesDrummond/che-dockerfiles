@@ -40,7 +40,8 @@ RUN apt-get update && \
     sudo update-ca-certificates -f && \
     sudo sudo /var/lib/dpkg/info/ca-certificates-java.postinst configure && \
     apt-get -y clean && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* && \
+    chmod a+w /etc/ssl/certs/java/cacerts
 
 ENV LANG en_GB.UTF-8
 ENV LANG en_US.UTF-8
